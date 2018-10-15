@@ -23,6 +23,10 @@
         student offices. The Friday Annex is located behind this facility.</string>
     <string name="FridayHallImageDescription">FRIDAY HALL</string>
 
+    <string name="CISCaption">Front of CIS Building</string>
+    <string name="CameronCaption">Aerial View of Cameron Hall</string>
+    <string name="FridayCaption">Front of Friday Hall</string>
+
 
     <string-array name="buildings">
         <item>CIS Building</item>

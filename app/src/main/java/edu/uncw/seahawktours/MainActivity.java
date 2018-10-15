@@ -20,13 +20,14 @@ public void onClickFindBuilding(View view)
         //Get a reference to the Spinner
         Spinner buildingName = (Spinner) findViewById(R.id.buildingsSpinner);
 
-        String buildInfo = String.valueOf(buildingName.getSelectedItem());
+        //Get selection from spinner
+        String spinnerText = buildingName.getSelectedItem().toString();
 
         //Create an intent for DetailActivity
         Intent intent = new Intent(this, DetailActivity.class);
 
-        //
-        //intent.putExtra(DetailActivity.EXTRA_MESSAGE, ???)
+        //Send text from spinner to intent object.
+        intent.putExtra(DetailActivity.EXTRA_MESSAGE, spinnerText);
 
         //Start DetailActivity with the intent
         startActivity(intent);

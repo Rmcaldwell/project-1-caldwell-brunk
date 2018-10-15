@@ -2,20 +2,26 @@
     <string name="app_name">SeahawkTours</string>
     <string name="findOutAboutTheBuilding">Find Out About the Building!</string>
 
+    <string name="CISBuildingName">Computer Information Systems Building</string>
     <string name="CISBuildingInfo">The Computer Information Systems (CIS) building was constructed to house
         the Information Systems and Operations Management Department from the Cameron School of Business and
         the Department of Computer Science from the College of Arts and Sciences. The CIS Building, a new 51,731
         square-foot state-of-the-art facility on the UNCW campus, opened January 10, 2007 for the new school semester. </string>
+    <string name="CISBuildingImageDescription">CIS BUILDING</string>
 
+    <string name="CameronHallName">Cameron Hall</string>
     <string name="CameronHallInfo">Funding for Cameron Hall began in 1985, with occupancy starting in 1988.
         As the home of the Cameron School of Business, the building contains classrooms and faculty offices.
         The official naming dedication was held on October 5, 1988.</string>
+    <string name="CameronHallImageDescription">CAMERON HALL</string>
 
+    <string name="FridayHallName">Friday Hall</string>
     <string name="FridayHallInfo">Opening in 1974 as the Marine Science Building, this structure became Friday Hall
         at its renaming dedication in 1986. The original purpose was classrooms and faculty office spaces for Department
         of Earth Sciences, the Science and Mathematics Education Center, Environmental Studies and Marine Sciences.
         The building now houses part of the Biological Sciences Department and offers additional space for graduate
         student offices. The Friday Annex is located behind this facility.</string>
+    <string name="FridayHallImageDescription">FRIDAY HALL</string>
 
 
     <string-array name="buildings">

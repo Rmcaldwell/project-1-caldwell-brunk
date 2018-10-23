@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".DetailActivity"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@drawable/tours_background">
 
     <LinearLayout
 
@@ -13,15 +14,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp" >
-
-        <TextView
-            android:id="@+id/buildingName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="35sp"
-            android:textColor="@color/blue"
-            android:layout_gravity="center"
-            android:gravity="center"/>
 
         <ImageView
             android:id="@+id/buildingImage"
@@ -37,10 +29,20 @@
             android:textColor="@color/light_grey"/>
 
         <TextView
+            android:id="@+id/buildingName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+        <TextView
             android:id="@+id/buildingInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
+            android:textAlignment="center"
+            android:textSize="20sp"
             android:layout_marginTop="20dp"/>
 
     </LinearLayout>

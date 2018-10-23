@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">SeahawkTours</string>
-    <string name="findOutAboutTheBuilding">Find Out About the Building!</string>
+    <string name="findOutAboutTheBuilding">Tour the building</string>
 
     <string name="CISBuildingName">Computer Information Systems Building</string>
     <string name="CISBuildingInfo">The Computer Information Systems (CIS) building was constructed to house
@@ -26,6 +26,7 @@
     <string name="CISCaption">Front of CIS Building</string>
     <string name="CameronCaption">Aerial View of Cameron Hall</string>
     <string name="FridayCaption">Front of Friday Hall</string>
+    <string name="mainTitle">Seahawk Tours</string>
 
 
     <string-array name="buildings">

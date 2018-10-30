@@ -1,7 +1,5 @@
 package edu.uncw.seahawktours;
 
-import android.media.Image;
-
 public class Building {
 
     //MARK: Properties

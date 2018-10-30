@@ -11,10 +11,7 @@ public class Building {
     private int img_resourceID;
     private String caption;
 
-    public
-
-
-    //
+    // Constructor(s)
     public Building(String name, String description, String url,
                     int img_resourceID, String caption) {
         this.name = name;
@@ -24,6 +21,10 @@ public class Building {
         this.caption = caption;
 
     }
+
+    public static final Building[] buildings = {
+            new Building(R.string.CameronHallName, R.string.CameronHallImageDescription,  R.string.CameronCaption);
+}
 
     public String getName() {
 

@@ -30,6 +30,11 @@
 
     <string name="UNCW_logo_image">UNCW Logo</string>
 
+    <!--URLS-->
+    <string name="Cameron_url">https://library.uncw.edu/web/collections/archives/bnl/24.html</string>
+    <string name="Friday_url">https://library.uncw.edu/web/collections/archives/bnl/20.html</string>
+    <string name="CIS_url">https://library.uncw.edu/web/collections/archives/bnl/cis.html</string>
+
 
     <string-array name="buildings">
         <item>CIS Building</item>

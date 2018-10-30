@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,46 +13,68 @@
         android:id="@+id/UNCWBuildings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/mainTitle"
         android:layout_gravity="center"
-        android:textSize="45sp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/mainTitle"
         android:textColor="@color/white"
-        android:textStyle="bold" />
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="139dp"
         android:layout_height="144dp"
         android:layout_gravity="center"
-        android:src="@drawable/good_logo" />
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:contentDescription="@string/UNCW_logo_image"
+        android:layout_marginTop="1dp"
+        android:src="@drawable/good_logo"
+        app:layout_constraintBottom_toTopOf="@+id/buildingsSpinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/UNCWBuildings" />
 
     <Spinner
         android:id="@+id/buildingsSpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textAlignment="center"
+        android:layout_marginBottom="163dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="1dp"
+        android:entries="@array/buildings"
         android:paddingBottom="4dp"
         android:paddingTop="4dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
-        android:entries="@array/buildings" />
-
-    <TextView
-        android:id="@+id/space"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"/>
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/buildingsButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <Button
         android:id="@+id/buildingsButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginBottom="22dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/button"
+        android:onClick="onClickFindBuilding"
         android:text="@string/findOutAboutTheBuilding"
         android:textColor="@color/black"
-        android:background="@drawable/button"
-        android:layout_gravity="end"
-        android:onClick="onClickFindBuilding"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

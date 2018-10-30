@@ -28,6 +28,8 @@
     <string name="FridayCaption">Front of Friday Hall</string>
     <string name="mainTitle">Seahawk Tours</string>
 
+    <string name="UNCW_logo_image">UNCW Logo</string>
+
 
     <string-array name="buildings">
         <item>CIS Building</item>

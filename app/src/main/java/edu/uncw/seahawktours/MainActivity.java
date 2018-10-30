@@ -4,8 +4,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
+
+import java.lang.reflect.Array;
 
 public class MainActivity extends Activity {
 
@@ -14,6 +17,13 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
+    //MARK: Properties
+    ArrayAdapter<Building> buildingArrayAdapter = new ArrayAdapter<>(
+            this,
+            android.R.layout.simple_list_item_1,
+            Building.
+    )
 
 //Clicking the  button makes the new activity to pop up with a picture and details of the building selected
 public void onClickFindBuilding(View view)

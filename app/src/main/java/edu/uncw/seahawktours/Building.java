@@ -11,6 +11,8 @@ public class Building {
     private int img_resourceID;
     private String caption;
 
+    public
+
 
     //
     public Building(String name, String description, String url,

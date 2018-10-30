@@ -13,24 +13,29 @@ import java.lang.reflect.Array;
 
 public class MainActivity extends AppCompatActivity {
 
+    //MARK: Properties
+    Spinner buildingName = (Spinner) findViewById(R.id.buildingsSpinner);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ArrayAdapter<Building> buildingArrayAdapter = new ArrayAdapter<>(
+                this,
+                android.R.layout.simple_list_item_1,
+                Building.buildings);
+
+        //Get a reference to the Spinner
+        buildingName.setAdapter(buildingArrayAdapter);
     }
 
-    //MARK: Properties
-    ArrayAdapter<Building> buildingArrayAdapter = new ArrayAdapter<>(
-            this,
-            android.R.layout.simple_list_item_1,
-            Building.
-    )
 
 //Clicking the  button makes the new activity to pop up with a picture and details of the building selected
 public void onClickFindBuilding(View view)
     {
         //Get a reference to the Spinner
-        Spinner buildingName = (Spinner) findViewById(R.id.buildingsSpinner);
+//        Spinner buildingName = (Spinner) findViewById(R.id.buildingsSpinner);
 
         //Get selection from spinner
         String spinnerText = buildingName.getSelectedItem().toString();

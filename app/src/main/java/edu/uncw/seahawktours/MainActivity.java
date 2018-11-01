@@ -10,7 +10,7 @@ import android.widget.Spinner;
 public class MainActivity extends AppCompatActivity {
 
     //MARK: Properties
-    Spinner buildingName = (Spinner) findViewById(R.id.buildingsSpinner);
+    Spinner buildingName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
                 Building.buildings);
 
         //Get a reference to the Spinner
+        buildingName = (Spinner) findViewById(R.id.buildingsSpinner);
         buildingName.setAdapter(buildingArrayAdapter);
     }
 

@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <include
+    layout="@layout/toolbar_main"
+    android:id="@+id/toolbar" />
+
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -16,16 +26,12 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <include
-            layout="@layout/toolbar_main"
-            android:id="@+id/toolbar" />
 
         <ImageView
             android:id="@+id/buildingImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/buildingContentDescription"
-            app:layout_constraintTop_toBottomOf="@id/toolbar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_gravity="center"/>
@@ -71,3 +77,5 @@
 
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
+
+</LinearLayout>

@@ -4,13 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/tours_background"
-    tools:context=".MainActivity">
-
-    <include
-        layout="@layout/toolbar_main"
-        android:id="@+id/toolbar" />
+    tools:context=".AboutActivity">
 
     <TextView
         android:id="@+id/UNCWBuildings"
@@ -25,10 +20,9 @@
         android:textColor="@color/white"
         android:textSize="45sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"/>
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <ImageView
         android:id="@+id/imageView2"
@@ -41,43 +35,36 @@
         android:contentDescription="@string/UNCW_logo_image"
         android:layout_marginTop="1dp"
         android:src="@drawable/good_logo"
-        app:layout_constraintBottom_toTopOf="@+id/buildingsSpinner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/UNCWBuildings" />
 
-    <Spinner
-        android:id="@+id/buildingsSpinner"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/aboutCreatedByID"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="163dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="1dp"
-        android:paddingBottom="4dp"
-        android:paddingTop="4dp"
-        android:entries="@array/buildings"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/buildingsButton"
+        android:layout_marginTop="43dp"
+        android:layout_marginBottom="131dp"
+        android:gravity="center"
+        android:text="@string/aboutNames"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/aboutStringID"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@id/imageView2" />
 
-    <Button
-        android:id="@+id/buildingsButton"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/aboutStringID"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:layout_marginBottom="22dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:background="@drawable/button"
-        android:onClick="onClickFindBuilding"
-        android:text="@string/findOutAboutTheBuilding"
+        android:text="@string/aboutString"
+        android:layout_marginTop="25dp"
+        android:textSize="20sp"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"/>
 
 </android.support.constraint.ConstraintLayout>

@@ -19,6 +19,7 @@ public class DetailActivity extends AppCompatActivity {
         // Add toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(null);
 
         Intent intent = getIntent();
         String information = intent.getStringExtra("spinnerText");
@@ -35,6 +36,7 @@ public class DetailActivity extends AppCompatActivity {
             buildingInfoView.setText(R.string.CISBuildingInfo);
             captionView.setText(R.string.CISCaption);
             URLView.setText(R.string.CIS_url);
+            //toolbar.setTitle(R.string.CISBuildingName);
         }
         else if (information.equals("Cameron Hall")) {
             buildingNameView.setText(R.string.CameronHallName);

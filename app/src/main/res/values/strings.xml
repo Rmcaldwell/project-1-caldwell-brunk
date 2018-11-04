@@ -9,6 +9,12 @@
 
     <string name="UNCW_Building_Archives_URL">https://library.uncw.edu/web/collections/archives/landmarks.html</string>
 
+
+    <!--ABOUT ACTIVITY-->
+    <string name="aboutNames">Created by: \nRiley Caldwell \nDavid Brunk</string>
+    <string name="aboutString">UNCW building information and images courtesy of the UNCW University Archives.</string>
+
+
     <!--CIS BUILDING-->
     <string name="CISBuildingName">Computer Information Systems Building</string>
     <string name="CISBuildingInfo">The Computer Information Systems (CIS) building was constructed to house
@@ -18,7 +24,6 @@
     <string name="CISCaption">Front of CIS Building</string>
     <string name="CIS_url">For more information, please visit "https://library.uncw.edu/web/collections/archives/bnl/cis.html"</string>
 
-
     <!--CAMERON HALL-->
     <string name="CameronHallName">Cameron Hall</string>
     <string name="CameronHallInfo">Funding for Cameron Hall began in 1985, with occupancy starting in 1988.
@@ -26,7 +31,6 @@
         The official naming dedication was held on October 5, 1988.</string>
     <string name="CameronCaption">Aerial View of Cameron Hall</string>
     <string name="Cameron_url">For more information, please visit "https://library.uncw.edu/web/collections/archives/bnl/24.html"</string>
-
 
     <!--FRIDAY HALL-->
     <string name="FridayHallName">Friday Hall</string>
@@ -52,7 +56,7 @@
         The various materials used in the filigree dome, doric columns and pavement finishes contain philosophical symbolism
         in honor of Dr. Shinn. The University Seal is also located here.</string>
     <string name="ShinnCaption">Shinn Plaza within the woods</string>
-    <string name="Shinn_url">https://library.uncw.edu/web/collections/archives/bnl/40a.html</string>
+    <string name="Shinn_url">For more information, please visit "https://library.uncw.edu/web/collections/archives/bnl/40a.html"</string>
 
 
     <!--IMAGE CONTENT DESCRIPTIONS-->
@@ -68,6 +72,10 @@
         <item>Kresge Greenhouse</item>
         <item>Shinn Plaza</item>
     </string-array>
+
+
+    <string name="action_up">Action up</string>
+    <string name="action_settings">Action settings</string>
 
 </resources>
 

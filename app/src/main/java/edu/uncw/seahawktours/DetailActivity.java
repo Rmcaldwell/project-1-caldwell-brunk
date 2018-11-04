@@ -2,7 +2,12 @@ package edu.uncw.seahawktours;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.MenuItemCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.ShareActionProvider;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
@@ -10,6 +15,9 @@ import android.support.v7.widget.Toolbar;
 public class DetailActivity extends AppCompatActivity {
 
     public static final String EXTRA_MESSAGE = "spinnerText";
+
+    private ShareActionProvider shareActionProvider;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +27,9 @@ public class DetailActivity extends AppCompatActivity {
         // Add toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(null);
+        ActionBar actionbar = getSupportActionBar();
+        actionbar.setDisplayHomeAsUpEnabled(true);
+        actionbar.setTitle(null);
 
         Intent intent = getIntent();
         String information = intent.getStringExtra("spinnerText");
@@ -56,7 +66,7 @@ public class DetailActivity extends AppCompatActivity {
             buildingNameView.setText(R.string.KresgeName);
             buildingImageView.setImageResource(R.drawable.kresge);
             buildingInfoView.setText(R.string.KresgeInfo);
-            captionView.setText(R.string.FridayCaption);
+            captionView.setText(R.string.KresgeCaption);
             URLView.setText(R.string.Kresge_url);
         }
         else if (information.equals("Shinn Plaza")) {
@@ -65,6 +75,34 @@ public class DetailActivity extends AppCompatActivity {
             buildingInfoView.setText(R.string.ShinnInfo);
             captionView.setText(R.string.ShinnCaption);
             URLView.setText(R.string.Shinn_url);
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu (Menu menu) {
+        //Inflate the menu; this adds items to the app bar
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        MenuItem menuItem = menu.findItem(R.id.action_share);
+        shareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(menuItem);
+        setShareActionIntent("Want to join me for pizza?");
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    private void setShareActionIntent(String text) {
+        Intent intent = new Intent (Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TEXT, text);
+        shareActionProvider.setShareIntent(intent);
+    }
+
+    public boolean onOptionsItemSelected (MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_info:
+                Intent intent = new Intent (this, AboutActivity.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 }

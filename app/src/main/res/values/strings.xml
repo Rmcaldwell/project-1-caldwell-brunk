@@ -74,8 +74,10 @@
     </string-array>
 
 
-    <string name="action_up">Action up</string>
+    <string name="action_info">About</string>
     <string name="action_settings">Action settings</string>
+    <string name="action_share">Share</string>
+
 
 </resources>
 

@@ -6,21 +6,33 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.content.Context;
+import android.support.v7.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
     //MARK: Properties
     Spinner buildingName;
 
+    private static Context context;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayAdapter<Building> buildingArrayAdapter = new ArrayAdapter<>(
+        // Create toolbar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        context = this;
+
+
+        // Create array adapter to populate the spinner
+        ArrayAdapter<String> buildingArrayAdapter = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_list_item_1,
-                Building.buildings);
+                Building.buildingNames);
 
         //Get a reference to the Spinner
         buildingName = (Spinner) findViewById(R.id.buildingsSpinner);
@@ -45,6 +57,11 @@ public void onClickFindBuilding(View view)
 
         //Start DetailActivity with the intent
         startActivity(intent);
+    }
+
+    public static Context getAppContext() {
+
+        return context;
     }
 
 }

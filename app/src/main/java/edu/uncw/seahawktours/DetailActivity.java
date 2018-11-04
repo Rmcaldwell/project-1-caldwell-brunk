@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.support.v7.widget.Toolbar;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -15,6 +16,10 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
+        // Add toolbar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         Intent intent = getIntent();
         String information = intent.getStringExtra("spinnerText");
 
@@ -24,7 +29,7 @@ public class DetailActivity extends AppCompatActivity {
         TextView captionView = (TextView) findViewById(R.id.caption);
         TextView URLView = (TextView) findViewById(R.id.buildingURL);
 
-        if (information.equals("CIS Building")) {
+        if (information.equals("Computer Information Systems Building")) {
             buildingNameView.setText(R.string.CISBuildingName);
             buildingImageView.setImageResource(R.drawable.cis);
             buildingInfoView.setText(R.string.CISBuildingInfo);

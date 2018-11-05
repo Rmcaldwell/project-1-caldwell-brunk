@@ -2,6 +2,7 @@ package edu.uncw.seahawktours;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
+import android.app.Fragment;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -76,6 +78,7 @@ public class DetailActivity extends AppCompatActivity {
             captionView.setText(R.string.ShinnCaption);
             URLView.setText(R.string.Shinn_url);
         }
+
     }
 
     @Override
@@ -84,7 +87,7 @@ public class DetailActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         MenuItem menuItem = menu.findItem(R.id.action_share);
         shareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(menuItem);
-        setShareActionIntent("Check out UNCW's buildings at https://library.uncw.edu/web/collections/archives/landmarks.html");
+        setShareActionIntent("Want to join me for pizza?");
         return super.onCreateOptionsMenu(menu);
     }
 

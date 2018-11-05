@@ -23,8 +23,6 @@ public class MainActivity extends AppCompatActivity {
 
     private ShareActionProvider shareActionProvider;
 
-    private MenuItem itemToHide;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         // Create toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         getSupportActionBar().setTitle(null);
 
         context = this;
@@ -78,7 +75,7 @@ public void onClickFindBuilding(View view)
     public boolean onCreateOptionsMenu (Menu menu) {
         //Inflate the menu; this adds items to the app bar
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        itemToHide = menu.findItem(R.id.action_share);
+        menu.findItem(R.id.action_share).setVisible(false);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -89,8 +86,6 @@ public void onClickFindBuilding(View view)
                 Intent intent = new Intent (this, AboutActivity.class);
                 startActivity(intent);
                 return true;
-            case R.id.action_share:
-                itemToHide.setVisible(false);
             default:
                 return super.onOptionsItemSelected(item);
         }

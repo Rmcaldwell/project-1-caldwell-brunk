@@ -7,8 +7,12 @@ import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ShareActionProvider;
+import android.text.Html;
+import android.text.Spanned;
+import android.text.method.LinkMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
@@ -19,7 +23,6 @@ public class DetailActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "spinnerText";
 
     private ShareActionProvider shareActionProvider;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,5 +111,6 @@ public class DetailActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
 }
 

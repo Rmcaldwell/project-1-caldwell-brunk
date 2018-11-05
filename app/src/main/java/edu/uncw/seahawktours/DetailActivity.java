@@ -84,7 +84,7 @@ public class DetailActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         MenuItem menuItem = menu.findItem(R.id.action_share);
         shareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(menuItem);
-        setShareActionIntent("Want to join me for pizza?");
+        setShareActionIntent("Check out UNCW's buildings at https://library.uncw.edu/web/collections/archives/landmarks.html");
         return super.onCreateOptionsMenu(menu);
     }
 

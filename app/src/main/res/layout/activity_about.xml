@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/tours_background"
+    android:background="@color/yellow"
     tools:context=".AboutActivity">
 
     <include
@@ -20,6 +20,8 @@
         android:layout_marginEnd="28dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="5dp"
+        android:shadowColor="@color/black"
+        android:shadowRadius="15"
         android:text="@string/mainTitle"
         android:textColor="@color/white"
         android:textSize="45sp"

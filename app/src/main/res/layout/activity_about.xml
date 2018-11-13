@@ -4,12 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/yellow"
+    android:background="@color/white"
     tools:context=".AboutActivity">
 
     <include
         layout="@layout/toolbar_main"
         android:id="@+id/toolbar" />
+
+    <ImageView
+        android:contentDescription="@string/background_contentDescription"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/wrightsville"
+        android:alpha="0.4"/>
 
     <TextView
         android:id="@+id/UNCWBuildings"

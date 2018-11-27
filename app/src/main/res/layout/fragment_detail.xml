@@ -7,13 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".DetailFragment">
 
-    <ImageView
-        android:contentDescription="@string/background_contentDescription"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="fitXY"
-        android:src="@drawable/wrightsville"
-        android:alpha="0.4"/>
 
     <ImageView
         android:id="@+id/buildingImage"

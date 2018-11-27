@@ -6,6 +6,7 @@
     <color name="blue">#a8160fe6</color>
     <color name="light_grey">#9b9b9b</color>
     <color name="white">#ffffff</color>
+    <color name="white_transparent">#d3ffffff</color>
     <color name="black">#000000</color>
     <color name="teal">#00abc6</color>
     <color name="primary_material_light_1">#f5f5f5</color>

@@ -1,88 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.v7.widget.RecyclerView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainFragment">
-    
-    <!--<ImageView-->
-        <!--android:id="@+id/splashScreen"-->
-        <!--android:layout_gravity="center"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="fill_parent"-->
-        <!--/>-->
-    <ImageView
-        android:contentDescription="@string/background_contentDescription"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/wrightsville"
-        android:scaleType="fitXY"
-        android:alpha="0.2"/>
+    android:layout_gravity="center"
+    android:id="@+id/building_recycler"
+    android:scrollbars="vertical">
 
-    <TextView
-        android:id="@+id/UNCWBuildings"
-        android:gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="69dp"
-        android:text="@string/mainTitle"
-        android:textColor="@color/uncw_teal"
-        android:textSize="45sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="139dp"
-        android:layout_height="144dp"
-        android:layout_gravity="center"
-        android:layout_marginStart="123dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="122dp"
-        android:contentDescription="@string/UNCW_logo_image"
-        android:src="@drawable/good_logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/UNCWBuildings" />
+</android.support.v7.widget.RecyclerView>
 
 
 
-    <Spinner
-        android:id="@+id/buildingsSpinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="32dp"
-        android:entries="@array/buildings"
-        android:paddingTop="4dp"
-        android:paddingBottom="4dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintBottom_toTopOf="@id/buildingsButton"/>
 
-    <Button
-        android:id="@+id/buildingsButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:layout_marginBottom="22dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:background="@drawable/button"
-        android:onClick="onClickFindBuilding"
-        android:text="@string/findOutAboutTheBuilding"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
-</android.support.constraint.ConstraintLayout>

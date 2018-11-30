@@ -1,5 +1,6 @@
 package edu.uncw.seahawktours;
 
+import android.os.Build;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.CardView;
 import android.text.Layout;
@@ -9,12 +10,19 @@ import android.widget.TextView;
 import android.widget.ImageView;
 import android.support.v4.content.ContextCompat;
 import android.graphics.drawable.Drawable;
+import java.util.List;
+
+import io.objectbox.Box;
+import io.objectbox.BoxStore;
 
 class CaptionedBuildingsAdapter extends RecyclerView.Adapter<CaptionedBuildingsAdapter.ViewHolder> {
 
     //MARK: Properties
     private String[] captions;
     private int[] imageIds;
+    private Box<Building> buildingBox;
+    private BoxStore database;
+
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // Define the view to be used for each data item
@@ -27,9 +35,17 @@ class CaptionedBuildingsAdapter extends RecyclerView.Adapter<CaptionedBuildingsA
         }
     }
 
+    //MARK: Constructor(s)
     public CaptionedBuildingsAdapter(String[] captions, int[] imageIds) {
         this.captions = captions;
         this.imageIds = imageIds;
+    }
+
+    public CaptionedBuildingsAdapter(Box<Building> box) {
+        this.buildingBox = box;
+        database = App.getBoxStore();
+
+
     }
 
     @Override
@@ -53,4 +69,7 @@ class CaptionedBuildingsAdapter extends RecyclerView.Adapter<CaptionedBuildingsA
         TextView textView = (TextView)cardView.findViewById(R.id.info_text);
         textView.setText(captions[position]);
     }
+
+    // Create list of buildings by reading from the database
+
 }

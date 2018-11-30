@@ -13,11 +13,14 @@ import android.view.Menu;
 import android.support.v7.widget.ShareActionProvider;
 import android.support.v4.view.MenuItemCompat;
 
+import io.objectbox.Box;
+
 
 public class MainActivity extends AppCompatActivity {
 
     //MARK: Properties
-    Spinner buildingName;
+//    Spinner buildingName;
+
 
     private static Context context;
 
@@ -36,14 +39,14 @@ public class MainActivity extends AppCompatActivity {
         context = this;
 
         // Create array adapter to populate the spinner
-        ArrayAdapter<String> buildingArrayAdapter = new ArrayAdapter<>(
-                this,
-                android.R.layout.simple_list_item_1,
-                Building.buildingNames);
+//        ArrayAdapter<String> buildingArrayAdapter = new ArrayAdapter<>(
+//                this,
+//                android.R.layout.simple_list_item_1,
+//                Building.buildingNames);
 
         //Get a reference to the Spinner
-        buildingName = (Spinner) findViewById(R.id.buildingsSpinner);
-        buildingName.setAdapter(buildingArrayAdapter);
+//        buildingName = (Spinner) findViewById(R.id.buildingsSpinner);
+//        buildingName.setAdapter(buildingArrayAdapter);
     }
 
 
@@ -54,13 +57,13 @@ public void onClickFindBuilding(View view)
 //        Spinner buildingName = (Spinner) findViewById(R.id.buildingsSpinner);
 
         //Get selection from spinner
-        String spinnerText = buildingName.getSelectedItem().toString();
+//        String spinnerText = buildingName.getSelectedItem().toString();
 
         //Create an intent for DetailActivity
         Intent intent = new Intent(this, DetailActivity.class);
 
         //Send text from spinner to intent object.
-        intent.putExtra(DetailActivity.EXTRA_MESSAGE, spinnerText);
+//        intent.putExtra(DetailActivity.EXTRA_MESSAGE, spinnerText);
 
         //Start DetailActivity with the intent
         startActivity(intent);
@@ -90,6 +93,8 @@ public void onClickFindBuilding(View view)
                 return super.onOptionsItemSelected(item);
         }
     }
+
+
 
 
 }

@@ -10,14 +10,14 @@
     <color name="white_transparent">#d3ffffff</color>
     <color name="black">#000000</color>
     <color name="teal">#00abc6</color>
+    <color name="darker_blue">#263d83</color>
+    <color name="yellow">#fffd9d</color>
+    <color name="dark_yellow">#fffc77</color>
+    <color name="lightest_blue">#3d62d1</color>
+    <color name="uncw_teal">#00685f</color>
     <color name="primary_material_light_1">#f5f5f5</color>
     <color name="primary_dark_material_light">#757575</color>
     <color name="accent_material_light">#008577</color>
     <color name="background_material_light">#fafafa</color>
     <color name="foreground_material_light">#000000</color>
-    <color name="lighter_blue">#263d83</color>
-    <color name="yellow">#fffd9d</color>
-    <color name="dark_yellow">#fffc77</color>
-    <color name="lightest_blue">#3d62d1</color>
-    <color name="uncw_teal">#00685f</color>
 </resources>

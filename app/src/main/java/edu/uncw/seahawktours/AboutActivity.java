@@ -32,33 +32,9 @@ public class AboutActivity extends AppCompatActivity {
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setTitle(null);
 
-        TextView textview = (TextView) findViewById(R.id.aboutStringID);
-
-        String text = "UNCW building information and images courtesy of the UNCW University Archives.";
-
-        SpannableString ss = new SpannableString(text);
-
-
-        ClickableSpan clickableSpan = new ClickableSpan() {
-            @Override
-            public void onClick(View widget) {
-                Toast.makeText(AboutActivity.this, "One", Toast.LENGTH_SHORT);
-
-            }
-            @Override
-            public void updateDrawState(TextPaint ds) {
-                super.updateDrawState(ds);
-                ds.setColor(Color.BLUE);
-                ds.setUnderlineText(false);
-            }
-        };
-
-        ss.setSpan(clickableSpan, 53, 77, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-        textview.setText(ss);
+        TextView textview = (TextView) findViewById(R.id.aboutStringID2);
         textview.setMovementMethod(LinkMovementMethod.getInstance());
 
-    }
 
 //    @Override
 //    public boolean onCreateOptionsMenu (Menu menu) {
@@ -76,6 +52,6 @@ public class AboutActivity extends AppCompatActivity {
 //            default:
 //                return super.onOptionsItemSelected(item);
 //        }
-//    }
+    }
 
 }

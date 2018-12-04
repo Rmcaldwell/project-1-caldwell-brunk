@@ -2,6 +2,12 @@ package edu.uncw.seahawktours;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,14 +19,11 @@ import android.view.Menu;
 import android.support.v7.widget.ShareActionProvider;
 import android.support.v4.view.MenuItemCompat;
 
-import io.objectbox.Box;
 
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     //MARK: Properties
-//    Spinner buildingName;
-
+    Spinner buildingName;
 
     private static Context context;
 
@@ -38,32 +41,27 @@ public class MainActivity extends AppCompatActivity {
 
         context = this;
 
-        // Create array adapter to populate the spinner
-//        ArrayAdapter<String> buildingArrayAdapter = new ArrayAdapter<>(
-//                this,
-//                android.R.layout.simple_list_item_1,
-//                Building.buildingNames);
+        //Navigation Drawer Implementation
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawer,toolbar,R.string.nav_open_drawer,R.string.nav_close_drawer);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
 
-        //Get a reference to the Spinner
-//        buildingName = (Spinner) findViewById(R.id.buildingsSpinner);
-//        buildingName.setAdapter(buildingArrayAdapter);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+//        Fragment fragment = new InboxFragment();
+//        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+//        ft.add(R.id.content_frame, fragment);
+//        ft.commit();
     }
 
 
 //Clicking the  button makes the new activity to pop up with a picture and details of the building selected
 public void onClickFindBuilding(View view)
     {
-        //Get a reference to the Spinner
-//        Spinner buildingName = (Spinner) findViewById(R.id.buildingsSpinner);
-
-        //Get selection from spinner
-//        String spinnerText = buildingName.getSelectedItem().toString();
-
         //Create an intent for DetailActivity
         Intent intent = new Intent(this, DetailActivity.class);
-
-        //Send text from spinner to intent object.
-//        intent.putExtra(DetailActivity.EXTRA_MESSAGE, spinnerText);
 
         //Start DetailActivity with the intent
         startActivity(intent);
@@ -94,7 +92,49 @@ public void onClickFindBuilding(View view)
         }
     }
 
+    //This method gets called when the user clicks on one of the items in the drawer
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item)
+    {
+        int id = item.getItemId();
+        Fragment fragment = null;
+        Intent intent = null;
 
+        switch(id){
+            case R.id.nav_about:
+                intent = new Intent(this, AboutActivity.class);
+                break;
+            case R.id.nav_help:
+                intent = new Intent(this, AboutActivity.class);
+                break;
+            case R.id.nav_feedback:
+                intent = new Intent(this, AboutActivity.class);
+            break;
+        }
 
+        startActivity(intent);
 
+//        if (fragment != null) {
+//            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+//            ft.replace(R.id.content_frame, fragment);
+//            ft.commit();
+//        } else {
+//            startActivity(intent);
+//        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+    //When the user presses the back button, close the drawer if its opem
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer =(DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)){
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
 }

@@ -10,6 +10,8 @@ import android.widget.TextView;
 import android.widget.ImageView;
 import android.support.v4.content.ContextCompat;
 import android.graphics.drawable.Drawable;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import io.objectbox.Box;
@@ -18,7 +20,7 @@ import io.objectbox.BoxStore;
 class CaptionedBuildingsAdapter extends RecyclerView.Adapter<CaptionedBuildingsAdapter.ViewHolder> {
 
     //MARK: Properties
-    private String[] captions;
+    private ArrayList<String> captions;
     private int[] imageIds;
     private Box<Building> buildingBox;
     private BoxStore database;
@@ -36,7 +38,12 @@ class CaptionedBuildingsAdapter extends RecyclerView.Adapter<CaptionedBuildingsA
     }
 
     //MARK: Constructor(s)
-    public CaptionedBuildingsAdapter(String[] captions, int[] imageIds) {
+//    public CaptionedBuildingsAdapter(String[] captions, int[] imageIds) {
+//        this.captions = captions;
+//        this.imageIds = imageIds;
+//    }
+
+    public CaptionedBuildingsAdapter(ArrayList<String> captions, int[] imageIds) {
         this.captions = captions;
         this.imageIds = imageIds;
     }
@@ -44,13 +51,11 @@ class CaptionedBuildingsAdapter extends RecyclerView.Adapter<CaptionedBuildingsA
     public CaptionedBuildingsAdapter(Box<Building> box) {
         this.buildingBox = box;
         database = App.getBoxStore();
-
-
     }
 
     @Override
     public int getItemCount() {
-        return captions.length;
+        return captions.size();
     }
 
     @Override
@@ -65,9 +70,9 @@ class CaptionedBuildingsAdapter extends RecyclerView.Adapter<CaptionedBuildingsA
         ImageView imageView = (ImageView)cardView.findViewById(R.id.info_image);
         Drawable drawable = ContextCompat.getDrawable(cardView.getContext(), imageIds[position]);
         imageView.setImageDrawable(drawable);
-        imageView.setContentDescription(captions[position]);
+        imageView.setContentDescription(captions.get(position));
         TextView textView = (TextView)cardView.findViewById(R.id.info_text);
-        textView.setText(captions[position]);
+        textView.setText(captions.get(position));
     }
 
     // Create list of buildings by reading from the database

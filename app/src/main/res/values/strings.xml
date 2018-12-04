@@ -5,14 +5,13 @@
 
     <string name="mainTitle">Seahawk Tours</string>
 
-    <string name="findOutAboutTheBuilding">Tour the building</string>
-
     <string name="UNCW_Building_Archives_URL">https://library.uncw.edu/web/collections/archives/landmarks.html</string>
 
 
     <!--ABOUT ACTIVITY-->
-    <string name="aboutNames">Created by: \nRiley Caldwell \nDavid Brunk</string>
-    <string name="aboutString">UNCW building information and images courtesy of the UNCW University Archives.</string>
+    <string name="aboutNames">Created by: \nRiley Caldwell \nDavid Brunk \nMatthew Harris</string>
+    <string name="aboutString">UNCW building information and images courtesy of the</string>
+    <string name="aboutString2"><a href="https://library.uncw.edu/web/collections/archives/landmarks.html">UNCW University Archives</a></string>
 
 
     <!--CIS BUILDING-->
@@ -58,27 +57,80 @@
     <string name="ShinnCaption">Shinn Plaza within the woods</string>
     <string name="Shinn_url">For more information, please visit "https://library.uncw.edu/web/collections/archives/bnl/40a.html"</string>
 
+    <!--WAGONER HALL-->
+    <string name="WagName">Wagoner Hall</string>
+    <string name="WagInfo">This structure opened to students in 1989 as the second campus dining hall (Westside was the first.)
+        The Wagoner Dining Hall features food service with special events catering in the Madeline Suite. The General College
+        was housed in Wagoner until its move to Westside following Westside\'s renovation.</string>
+    <string name="WagCaption">Wagoner Hall\'s front</string>
+    <string name="Wag_url">For more information, please visit "https://library.uncw.edu/web/collections/archives/bnl/39.html"</string>
+
+    <!--RANDALL LIBRARY-->
+    <string name="RandallName">Randall Library</string>
+    <string name="RandallInfo">The first on-site library was housed in Alderman Hall administration building following the move from
+        Isaac Bear Building. In 1968, the original front of Randall Library faced College Road but since its 1980s expansion the
+        entrance now faces Chancellors Walk. This facility contains UNCW Archives, Special Collections (Helen Hagan Room), the
+        Gene Huguelet Conference Room, and the Honors Program offices, along with various faculty offices.</string>
+    <string name="RandallCaption">Randall Library</string>
+    <string name="Randall_url">https://library.uncw.edu/web/collections/archives/bnl/3.html</string>
+
+    <!--CULTURAL ARTS BUILDING-->
+    <string name="ArtsName">Cultural Arts Building</string>
+    <string name="ArtsInfo">The Cultural Arts Building (CAB) opened on January 25, 2007, and held its grand opening one month later.
+        At a cost of $33.5 million, this 104,830 square-foot building was created to house the Art and Art History, Music, and Theatre departments.
+        The building features an enclosed art gallery, dance studio, the 125-seat Black Box Theatre for new and experimental works, the 281-seat
+        Recital Hall, and the 295-seat Proscenium/Main Stage Theatre. </string>
+    <string name="ArtsCaption">Front of the Cultural Arts Building</string>
+    <string name="Arts_url">https://library.uncw.edu/web/collections/archives/bnl/ca.html</string>
+
+    <!--LEUTZE HALL-->
+    <string name="LeutzeName">Leutze Hall</string>
+    <string name="LeutzeInfo">Originally called Lakeside Hall due to the building\'s location near the Commons lake,
+        it became known as Leutze Hall in a 2003 dedication ceremony. Currently, the Departments of Communication Studies,
+        Political Science, Foreign Languages and Literatures and Social Work are housed there. The film studies department was
+        housed there until 2007 when it moved to King Hall. UNCW Media has a television studio in this building.</string>
+    <string name="LeutzeCaption">Front of Letuze Hall</string>
+    <string name="Leutze_url">https://library.uncw.edu/web/collections/archives/bnl/17.html</string>
+
+    <!--GALLOWAY RESIDENCE HALL-->
+    <string name="GallowayName">Galloway Residence Hall</string>
+    <string name="GallowayInfo">Originally called \'Dorm \'71,\' Galloway Hall was the first campus residence facility at UNC Wilmington.
+        This building accommodates 400 students and was the first air conditioned dorm in the University of North Carolina system.</string>
+    <string name="GallowayCaption">Front of Galloway Residence Hall</string>
+    <string name="Galloway_url">https://library.uncw.edu/web/collections/archives/bnl/29.html</string>
+
 
     <!--IMAGE CONTENT DESCRIPTIONS-->
     <string name="buildingContentDescription">Building Descriptions</string>
     <string name="UNCW_logo_image">UNCW Logo</string>
+    <string name="background_contentDescription">Wrightsville beach</string>
 
 
     <!--BUILDINGS ARRAY-->
-    <string-array name="buildings">
-        <item>CIS Building</item>
-        <item>Cameron Hall</item>
-        <item>Friday Hall</item>
-        <item>Kresge Greenhouse</item>
-        <item>Shinn Plaza</item>
-    </string-array>
+    <!--<string-array name="buildings">-->
+        <!--<item>CIS Building</item>-->
+        <!--<item>Cameron Hall</item>-->
+        <!--<item>Friday Hall</item>-->
+        <!--<item>Kresge Greenhouse</item>-->
+        <!--<item>Shinn Plaza</item>-->
+    <!--</string-array>-->
 
 
+    <!--ACTION BUTTON-->
     <string name="action_info">About</string>
     <string name="action_settings">Action settings</string>
     <string name="action_share">Share</string>
 
-    <string name="background_contentDescription">Wrightsville beach</string>
+
+    <!--Navigation Drawer-->
+    <string name="nav_about">About</string>
+    <string name="nav_help">Help</string>
+    <string name="nav_feedback">Give us feedback</string>
+    <string name="nav_support">Support</string>
+    <string name="nav_open_drawer">Open navigation drawer</string>
+    <string name="nav_close_drawer">Close navigation drawer</string>
+
+
 
 
 </resources>

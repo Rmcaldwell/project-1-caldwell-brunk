@@ -1,7 +1,17 @@
 package edu.uncw.seahawktours;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.Looper;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,6 +22,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.support.v7.widget.ShareActionProvider;
 import android.support.v4.view.MenuItemCompat;
+import android.Manifest;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationResult;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnSuccessListener;
 
 import io.objectbox.Box;
 
@@ -19,61 +36,113 @@ import io.objectbox.Box;
 public class MainActivity extends AppCompatActivity {
 
     //MARK: Properties
-//    Spinner buildingName;
+    private ShareActionProvider shareActionProvider;
 
+    // Location properties
+    private static final int REQUEST_CODE = 1000;
+    FusedLocationProviderClient fusedLocationProviderClient;
+    LocationRequest locationRequest;
+    LocationCallback locationCallback;
 
     private static Context context;
 
-    private ShareActionProvider shareActionProvider;
+    public double latitude;
+    public double longitude;
+
+
+    // *********************** Location Management ************************** //
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
+            case REQUEST_CODE: {
+                if (grantResults.length > 0) {
+                    if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    } else if (grantResults[0] == PackageManager.PERMISSION_DENIED) {
+
+                    }
+                }
+            }
+        }
+    }
+    // *********************************************************************** //
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        context = this;
+
+        // Check permissions at runtime
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE);
+
+        } else {
+
+            // If permission is granted
+            buildLocationRequest();
+            buildLocationCallback();
+
+            // Create FusedProviderClient
+            fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+        }
+
+        // Get location
+        if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(MainActivity.this, new String[] {Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE);
+            return;
+        }
+        fusedLocationProviderClient.requestLocationUpdates(locationRequest, locationCallback, Looper.myLooper());
+
         // Create toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(null);
-
-        context = this;
-
-        // Create array adapter to populate the spinner
-//        ArrayAdapter<String> buildingArrayAdapter = new ArrayAdapter<>(
-//                this,
-//                android.R.layout.simple_list_item_1,
-//                Building.buildingNames);
-
-        //Get a reference to the Spinner
-//        buildingName = (Spinner) findViewById(R.id.buildingsSpinner);
-//        buildingName.setAdapter(buildingArrayAdapter);
     }
 
+    private void buildLocationRequest() {
+        locationRequest = new LocationRequest();
+        locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        locationRequest.setInterval(5000);
+        locationRequest.setFastestInterval(3000);
+        locationRequest.setSmallestDisplacement(10);
+    }
+
+    // ************************** More location management ******************************** //
+    private void buildLocationCallback() {
+        locationCallback = new LocationCallback() {
+
+            @Override
+            public void onLocationResult(LocationResult locationResult) {
+                for (Location location:locationResult.getLocations()) {
+                    // Get location lat and lon
+                    latitude = location.getLatitude();
+                    longitude = location.getLongitude();
+                }
+
+            }
+        };
+    }
+    // ************************************************************************************* //
 
 //Clicking the  button makes the new activity to pop up with a picture and details of the building selected
-public void onClickFindBuilding(View view)
-    {
-        //Get a reference to the Spinner
-//        Spinner buildingName = (Spinner) findViewById(R.id.buildingsSpinner);
-
-        //Get selection from spinner
-//        String spinnerText = buildingName.getSelectedItem().toString();
-
-        //Create an intent for DetailActivity
-        Intent intent = new Intent(this, DetailActivity.class);
-
-        //Send text from spinner to intent object.
-//        intent.putExtra(DetailActivity.EXTRA_MESSAGE, spinnerText);
-
-        //Start DetailActivity with the intent
-        startActivity(intent);
-    }
-
+//public void onClickFindBuilding(View view)
+//    {
+//        //Create an intent for DetailActivity
+//        Intent intent = new Intent(this, DetailActivity.class);
+//
+//        //Start DetailActivity with the intent
+//        startActivity(intent);
+//    }
+//
     public static Context getAppContext() {
 
         return context;
     }
 
+    // Create "..." menu
     @Override
     public boolean onCreateOptionsMenu (Menu menu) {
         //Inflate the menu; this adds items to the app bar
@@ -82,7 +151,7 @@ public void onClickFindBuilding(View view)
         return super.onCreateOptionsMenu(menu);
     }
 
-
+    // Make menu items respond to clicks
     public boolean onOptionsItemSelected (MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_info:

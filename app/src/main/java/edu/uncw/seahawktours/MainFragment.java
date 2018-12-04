@@ -1,6 +1,6 @@
 package edu.uncw.seahawktours;
 
-
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,26 +10,17 @@ import android.view.ViewGroup;
 import android.widget.Spinner;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.GridLayoutManager;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import io.objectbox.Box;
 import io.objectbox.BoxStore;
-
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class MainFragment extends Fragment {
 
-
-
     //MARK: Properties
-//    Spinner buildingName;
-
-    private Box notesBox;
-
 
     public MainFragment() {
         // Required empty public constructor
@@ -42,15 +33,12 @@ public class MainFragment extends Fragment {
 
 
         Box<Building> buildingBox = (App.getBoxStore().boxFor(Building.class));
-        buildingBox.getAll();
         List<Building> buildings = buildingBox.getAll();
 
-        String[] buildingNames = {"1", "2", "3", "4", "5"};
+        ArrayList<String> buildingNames = new ArrayList<>();
         for (int i = 0; i < buildings.size(); i++) {
-            buildingNames[i] = buildings.get(i).getName();
+            buildingNames.add(buildings.get(i).getNameId());
         }
-
-
 
         RecyclerView buildingRecycler = (RecyclerView)inflater.inflate(R.layout.fragment_main, container,false);
 //
@@ -63,12 +51,24 @@ public class MainFragment extends Fragment {
 //        for (int i = 0; i < buildingImages.length; i++) {
 //            buildingImages[i] = Building.buildingNames[i]
 //        }
-        String[] names = { "Cameron", "Friday", "Shinn", "CIS"};
+
+        // Create arrays of
         int[] images = { R.drawable.cameron, R.drawable.friday, R.drawable.shinn, R.drawable.cis};
+
+        // Create recyclerView
         CaptionedBuildingsAdapter adapter = new CaptionedBuildingsAdapter(buildingNames, images);
         buildingRecycler.setAdapter(adapter);
         GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), 1);
         buildingRecycler.setLayoutManager(layoutManager);
+
+        // Make cards in recyclerView respond to clicks
+        adapter.setListener(new CaptionedBuildingsAdapter.Listener() {
+            public void onClick(int position) {
+                Intent intent = new Intent(MainActivity.getAppContext(), DetailActivity.class);
+                intent.putExtra(DetailActivity.EXTRA_MESSAGE, position);
+                startActivity(intent);
+            }
+        });
         return buildingRecycler;
     }
 

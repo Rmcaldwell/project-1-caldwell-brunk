@@ -5,8 +5,6 @@
 
     <string name="mainTitle">Seahawk Tours</string>
 
-    <string name="findOutAboutTheBuilding">Tour the building</string>
-
     <string name="UNCW_Building_Archives_URL">https://library.uncw.edu/web/collections/archives/landmarks.html</string>
 
 
@@ -64,14 +62,14 @@
     <string name="UNCW_logo_image">UNCW Logo</string>
 
 
-    <!--BUILDINGS ARRAY-->
-    <string-array name="buildings">
-        <item>CIS Building</item>
-        <item>Cameron Hall</item>
-        <item>Friday Hall</item>
-        <item>Kresge Greenhouse</item>
-        <item>Shinn Plaza</item>
-    </string-array>
+    <!--&lt;!&ndash;BUILDINGS ARRAY&ndash;&gt;-->
+    <!--<string-array name="buildings">-->
+        <!--<item>CIS Building</item>-->
+        <!--<item>Cameron Hall</item>-->
+        <!--<item>Friday Hall</item>-->
+        <!--<item>Kresge Greenhouse</item>-->
+        <!--<item>Shinn Plaza</item>-->
+    <!--</string-array>-->
 
 
     <string name="action_info">About</string>
@@ -79,6 +77,10 @@
     <string name="action_share">Share</string>
 
     <string name="background_contentDescription">Wrightsville beach</string>
+
+    <string name="request_permission_title">Where you at??!</string>
+    <string name="text_location_permission">We need yo location bruh</string>
+    <string name="grant_location_button">Hell yeah</string>
 
 
 </resources>

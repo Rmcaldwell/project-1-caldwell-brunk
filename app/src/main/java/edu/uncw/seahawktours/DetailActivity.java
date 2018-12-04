@@ -18,9 +18,13 @@ import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
 import android.app.Fragment;
 
+import java.util.List;
+
+import io.objectbox.Box;
+
 public class DetailActivity extends AppCompatActivity {
 
-    public static final String EXTRA_MESSAGE = "spinnerText";
+    public static final String EXTRA_MESSAGE = "BuildingId";
 
     private ShareActionProvider shareActionProvider;
 
@@ -36,8 +40,10 @@ public class DetailActivity extends AppCompatActivity {
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setTitle(null);
 
-        Intent intent = getIntent();
-        String information = intent.getStringExtra("spinnerText");
+        int buildingId = (Integer)getIntent().getExtras().get(EXTRA_MESSAGE);
+        Box<Building> buildingBox = (App.getBoxStore().boxFor(Building.class));
+        List<Building> buildings = buildingBox.getAll();
+        String buildingName = buildings.get(buildingId).getNameId();
 
         TextView buildingInfoView = (TextView) findViewById(R.id.buildingInfo);
         ImageView buildingImageView = (ImageView) findViewById(R.id.buildingImage);
@@ -45,7 +51,7 @@ public class DetailActivity extends AppCompatActivity {
         TextView captionView = (TextView) findViewById(R.id.caption);
         TextView URLView = (TextView) findViewById(R.id.buildingURL);
 
-        if (information.equals("Computer Information Systems Building")) {
+        if (buildingName.equals("CIS Building")) {
             buildingNameView.setText(R.string.CISBuildingName);
             buildingImageView.setImageResource(R.drawable.cis);
             buildingInfoView.setText(R.string.CISBuildingInfo);
@@ -53,28 +59,28 @@ public class DetailActivity extends AppCompatActivity {
             URLView.setText(R.string.CIS_url);
             //toolbar.setTitle(R.string.CISBuildingName);
         }
-        else if (information.equals("Cameron Hall")) {
+        else if (buildingName.equals("Cameron Hall")) {
             buildingNameView.setText(R.string.CameronHallName);
             buildingImageView.setImageResource(R.drawable.cameron);
             buildingInfoView.setText(R.string.CameronHallInfo);
             captionView.setText(R.string.CameronCaption);
             URLView.setText(R.string.Cameron_url);
         }
-        else if (information.equals("Friday Hall")) {
+        else if (buildingName.equals("Friday Hall")) {
             buildingNameView.setText(R.string.FridayHallName);
             buildingImageView.setImageResource(R.drawable.friday);
             buildingInfoView.setText(R.string.FridayHallInfo);
             captionView.setText(R.string.FridayCaption);
             URLView.setText(R.string.Friday_url);
         }
-        else if (information.equals("Kresge Greenhouse")) {
+        else if (buildingName.equals("Kresge Greenhouse")) {
             buildingNameView.setText(R.string.KresgeName);
             buildingImageView.setImageResource(R.drawable.kresge);
             buildingInfoView.setText(R.string.KresgeInfo);
             captionView.setText(R.string.KresgeCaption);
             URLView.setText(R.string.Kresge_url);
         }
-        else if (information.equals("Shinn Plaza")) {
+        else if (buildingName.equals("Shinn Plaza")) {
             buildingNameView.setText(R.string.ShinnName);
             buildingImageView.setImageResource(R.drawable.shinn);
             buildingInfoView.setText(R.string.ShinnInfo);

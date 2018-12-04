@@ -10,6 +10,11 @@ import android.widget.TextView;
 import android.widget.ImageView;
 import android.support.v4.content.ContextCompat;
 import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.view.View.OnClickListener;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 import io.objectbox.Box;
@@ -18,10 +23,20 @@ import io.objectbox.BoxStore;
 class CaptionedBuildingsAdapter extends RecyclerView.Adapter<CaptionedBuildingsAdapter.ViewHolder> {
 
     //MARK: Properties
-    private String[] captions;
+    private ArrayList<String> captions;
     private int[] imageIds;
     private Box<Building> buildingBox;
     private BoxStore database;
+
+    private Listener listener;
+
+    interface Listener {
+        void onClick(int position);
+    }
+
+    public void setListener(Listener listener) {
+        this.listener = listener;
+    }
 
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -36,21 +51,24 @@ class CaptionedBuildingsAdapter extends RecyclerView.Adapter<CaptionedBuildingsA
     }
 
     //MARK: Constructor(s)
-    public CaptionedBuildingsAdapter(String[] captions, int[] imageIds) {
-        this.captions = captions;
-        this.imageIds = imageIds;
-    }
+//    public CaptionedBuildingsAdapter(String[] captions, int[] imageIds) {
+//        this.captions = captions;
+//        this.imageIds = imageIds;
+//    }
 
     public CaptionedBuildingsAdapter(Box<Building> box) {
         this.buildingBox = box;
         database = App.getBoxStore();
+    }
 
-
+    public CaptionedBuildingsAdapter(ArrayList<String> captions, int[] imageIds) {
+        this.captions = captions;
+        this.imageIds = imageIds;
     }
 
     @Override
     public int getItemCount() {
-        return captions.length;
+        return captions.size();
     }
 
     @Override
@@ -60,14 +78,22 @@ class CaptionedBuildingsAdapter extends RecyclerView.Adapter<CaptionedBuildingsA
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         CardView cardView = holder.cardView;
-        ImageView imageView = (ImageView)cardView.findViewById(R.id.info_image);
-        Drawable drawable = ContextCompat.getDrawable(cardView.getContext(), imageIds[position]);
-        imageView.setImageDrawable(drawable);
-        imageView.setContentDescription(captions[position]);
+//        ImageView imageView = (ImageView)cardView.findViewById(R.id.info_image);
+//        Drawable drawable = ContextCompat.getDrawable(cardView.getContext(), imageIds[position]);
+//        imageView.setImageDrawable(drawable);
+//        imageView.setContentDescription(captions.get(position));
         TextView textView = (TextView)cardView.findViewById(R.id.info_text);
-        textView.setText(captions[position]);
+        textView.setText(captions.get(position));
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (listener != null) {
+                    listener.onClick(position);
+                }
+            }
+        });
     }
 
     // Create list of buildings by reading from the database

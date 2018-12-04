@@ -27,7 +27,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="28dp"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="5dp"
         android:shadowColor="@color/black"
         android:shadowRadius="15"
         android:text="@string/mainTitle"
@@ -36,7 +36,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/toolbar"/>
 
     <ImageView
         android:id="@+id/imageView2"
@@ -63,37 +63,18 @@
         android:text="@string/aboutNames"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/aboutStringID1"
+        app:layout_constraintBottom_toTopOf="@+id/aboutStringID"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imageView2" />
 
-    <View
-        android:id="@+id/dividerBottom"
-        android:layout_width="match_parent"
-        android:layout_height=".05dp"
-        android:background="@color/light_grey"
-        android:layout_marginBottom="2dp"
-        app:layout_constraintBottom_toTopOf="@id/aboutStringID1"/>
-
     <TextView
-        android:id="@+id/aboutStringID1"
+        android:id="@+id/aboutStringID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/aboutString"
-        android:textSize="12sp"
-        android:textColor="@color/black"
-        android:gravity="center"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/aboutStringID2" />
-
-    <TextView
-        android:id="@+id/aboutStringID2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/aboutString2"
-        android:textSize="12sp"
+        android:layout_marginTop="25dp"
+        android:textSize="20sp"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

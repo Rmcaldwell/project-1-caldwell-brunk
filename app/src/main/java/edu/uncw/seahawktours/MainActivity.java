@@ -9,8 +9,13 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Looper;
 import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -33,7 +38,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import io.objectbox.Box;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     //MARK: Properties
     private ShareActionProvider shareActionProvider;
@@ -73,8 +78,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        context = this;
+        // Create toolbar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(null);
 
+        // Navigation Menu
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
+                R.string.nav_open_drawer, R.string.nav_close_drawer);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+        // ***********************************************************************************
+
+        context = this;
+        // ********************** LOCATION ***************************************************
         // Check permissions at runtime
         if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE);
@@ -95,11 +115,9 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         fusedLocationProviderClient.requestLocationUpdates(locationRequest, locationCallback, Looper.myLooper());
+        // *************************************************************************************
 
-        // Create toolbar
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(null);
+
     }
 
     private void buildLocationRequest() {
@@ -160,6 +178,43 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+    // Navigation menu methods
+    //This method gets called when the user clicks on one of the items in the drawer
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item)
+    {
+        int id = item.getItemId();
+        Intent intent = null;
+
+        switch(id){
+            case R.id.nav_about:
+                intent = new Intent(this, AboutActivity.class);
+                break;
+            case R.id.nav_help:
+                intent = new Intent(this, AboutActivity.class);
+                break;
+            case R.id.nav_feedback:
+                intent = new Intent(this, AboutActivity.class);
+                break;
+        }
+
+        startActivity(intent);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer =(DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)){
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
         }
     }
 

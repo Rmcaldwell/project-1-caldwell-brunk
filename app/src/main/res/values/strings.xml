@@ -1,10 +1,8 @@
 <resources>
 
-
+    <!--MAIN-->
     <string name="app_name">Seahawk Tours</string>
-
     <string name="mainTitle">Seahawk Tours</string>
-
     <string name="UNCW_Building_Archives_URL">https://library.uncw.edu/web/collections/archives/landmarks.html</string>
 
 
@@ -64,15 +62,15 @@
         the entrance now faces Chancellors Walk. This facility contains UNCW Archives, Special Collections (Helen Hagan Room),
         the Gene Huguelet Conference Room, and the Honors Program offices, along with various faculty offices.</string>
     <string name="RandallCaption">Randall Library</string>
-    <string name="Randall_url">https://library.uncw.edu/web/collections/archives/bnl/3.html</string>
+    <string name="Randall_url">For more information, please visit "https://library.uncw.edu/web/collections/archives/bnl/3.html"</string>
 
     <!--WAGONER HALL-->
     <string name="WagName">Wagoner Hall</string>
     <string name="WagInfo">This structure opened to students in 1989 as the second campus dining hall (Westside was the first.)
         The Wagoner Dining Hall features food service with special events catering in the Madeline Suite. The General College
-        was housed in Wagoner until its move to Westside following Westside's renovation.</string>
+        was housed in Wagoner until its move to Westside following Westside\'s renovation.</string>
     <string name="WagCaption">The front of Wagoner Hall</string>
-    <string name="Wag_url">https://library.uncw.edu/web/collections/archives/bnl/39.html</string>
+    <string name="Wag_url">For more information, please visit "https://library.uncw.edu/web/collections/archives/bnl/39.html"</string>
 
     <!--DOBO HALL-->
     <string name="DoboName">Dobo Hall</string>
@@ -80,7 +78,7 @@
         offices for the Chemistry and Biology Departments. Known as Dobo Hall since its 1999 dedication to the Dobo brothers,
         it is currently used by the Department of Biology and Marine Biology and the Department of Chemistry.</string>
     <string name="DoboCaption">Dobo Hall</string>
-    <string name="Dobo_url">https://library.uncw.edu/web/collections/archives/bnl/25.html</string>
+    <string name="Dobo_url">For more information, please visit "https://library.uncw.edu/web/collections/archives/bnl/25.html"</string>
 
     <!--GALLOWAY RESIDENCE HALL-->
     <string name="GallowayName">Galloway Residence Hall</string>
@@ -88,7 +86,7 @@
         UNC Wilmington. This building accommodates 400 students and was the first air conditioned dorm in the University of
         North Carolina system.</string>
     <string name="GallowayCaption">Galloway</string>
-    <string name="Galloway_url">https://library.uncw.edu/web/collections/archives/bnl/29.html</string>
+    <string name="Galloway_url">For more information, please visit "https://library.uncw.edu/web/collections/archives/bnl/29.html"</string>
 
     <!--LEUTZE HALL-->
     <string name="LeutzeName">Leutze Hall</string>
@@ -97,7 +95,7 @@
         Political Science, Foreign Languages and Literatures and Social Work are housed there. The film studies department was
         housed there until 2007 when it moved to King Hall. UNCW Media has a television studio in this building.</string>
     <string name="LeutzeCaption">Leutze Over the lake</string>
-    <string name="Leutze_url">https://library.uncw.edu/web/collections/archives/bnl/17.html</string>
+    <string name="Leutze_url">For more information, please visit "https://library.uncw.edu/web/collections/archives/bnl/17.html"</string>
 
 
 
@@ -105,24 +103,16 @@
     <!--IMAGE CONTENT DESCRIPTIONS-->
     <string name="buildingContentDescription">Building Descriptions</string>
     <string name="UNCW_logo_image">UNCW Logo</string>
+    <string name="background_contentDescription">Wrightsville beach</string>
 
 
-    <!--&lt;!&ndash;BUILDINGS ARRAY&ndash;&gt;-->
-    <!--<string-array name="buildings">-->
-        <!--<item>CIS Building</item>-->
-        <!--<item>Cameron Hall</item>-->
-        <!--<item>Friday Hall</item>-->
-        <!--<item>Kresge Greenhouse</item>-->
-        <!--<item>Shinn Plaza</item>-->
-    <!--</string-array>-->
-
-
+    <!--ACTION BUTTON-->
     <string name="action_info">About</string>
     <string name="action_settings">Action settings</string>
     <string name="action_share">Share</string>
 
-    <string name="background_contentDescription">Wrightsville beach</string>
 
+    <!--LOCATION-->
     <string name="request_permission_title">Where you at??!</string>
     <string name="text_location_permission">We need yo location bruh</string>
     <string name="grant_location_button">Hell yeah</string>

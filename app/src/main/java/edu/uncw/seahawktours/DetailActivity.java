@@ -101,7 +101,7 @@ public class DetailActivity extends AppCompatActivity {
             captionView.setText(R.string.GallowayCaption);
             URLView.setText(R.string.Galloway_url);
 
-        } else if (buildingName.equals("Randall Hall")) {
+        } else if (buildingName.equals("Randall Library")) {
             buildingNameView.setText(R.string.RandallName);
             buildingImageView.setImageResource(R.drawable.randall);
             buildingInfoView.setText(R.string.RandallInfo);

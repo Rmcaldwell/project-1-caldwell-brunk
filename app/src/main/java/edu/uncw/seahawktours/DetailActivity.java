@@ -125,6 +125,7 @@ public class DetailActivity extends AppCompatActivity {
 
     }
 
+
     @Override
     public boolean onCreateOptionsMenu (Menu menu) {
         //Inflate the menu; this adds items to the app bar

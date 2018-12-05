@@ -51,7 +51,7 @@ public class DetailActivity extends AppCompatActivity {
         TextView captionView = (TextView) findViewById(R.id.caption);
         TextView URLView = (TextView) findViewById(R.id.buildingURL);
 
-        if (buildingName.equals("CIS Building")) {
+        if (buildingName.equals("Computer Information Systems Building")) {
             buildingNameView.setText(R.string.CISBuildingName);
             buildingImageView.setImageResource(R.drawable.cis);
             buildingInfoView.setText(R.string.CISBuildingInfo);
@@ -86,6 +86,41 @@ public class DetailActivity extends AppCompatActivity {
             buildingInfoView.setText(R.string.ShinnInfo);
             captionView.setText(R.string.ShinnCaption);
             URLView.setText(R.string.Shinn_url);
+
+        } else if (buildingName.equals("Wagoner Hall")) {
+            buildingNameView.setText(R.string.WagName);
+            buildingImageView.setImageResource(R.drawable.wag);
+            buildingInfoView.setText(R.string.WagInfo);
+            captionView.setText(R.string.WagCaption);
+            URLView.setText(R.string.Wag_url);
+
+        } else if (buildingName.equals("Galloway Residence Hall")) {
+            buildingNameView.setText(R.string.GallowayName);
+            buildingImageView.setImageResource(R.drawable.galloway);
+            buildingInfoView.setText(R.string.GallowayInfo);
+            captionView.setText(R.string.GallowayCaption);
+            URLView.setText(R.string.Galloway_url);
+
+        } else if (buildingName.equals("Randall Hall")) {
+            buildingNameView.setText(R.string.RandallName);
+            buildingImageView.setImageResource(R.drawable.randall);
+            buildingInfoView.setText(R.string.RandallInfo);
+            captionView.setText(R.string.RandallCaption);
+            URLView.setText(R.string.Randall_url);
+
+        }  else if (buildingName.equals("Leutze Hall")) {
+            buildingNameView.setText(R.string.LeutzeName);
+            buildingImageView.setImageResource(R.drawable.leutze);
+            buildingInfoView.setText(R.string.LeutzeInfo);
+            captionView.setText(R.string.LeutzeCaption);
+            URLView.setText(R.string.Leutze_url);
+
+        }  else if (buildingName.equals("Dobo Hall")) {
+            buildingNameView.setText(R.string.DoboName);
+            buildingImageView.setImageResource(R.drawable.dobo);
+            buildingInfoView.setText(R.string.DoboInfo);
+            captionView.setText(R.string.DoboCaption);
+            URLView.setText(R.string.Dobo_url);
         }
 
     }

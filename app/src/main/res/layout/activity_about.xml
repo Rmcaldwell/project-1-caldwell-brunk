@@ -17,7 +17,8 @@
         android:layout_height="match_parent"
         android:scaleType="fitXY"
         android:src="@drawable/wrightsville"
-        android:alpha="0.2"/>
+        android:alpha="0.2"
+        android:layout_marginTop="55dp"/>
 
     <TextView
         android:id="@+id/UNCWBuildings"
@@ -63,22 +64,32 @@
         android:text="@string/aboutNames"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/aboutStringID"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@id/imageView2"
+        app:layout_constraintBottom_toTopOf="@id/aboutStringID1"/>
 
     <TextView
-        android:id="@+id/aboutStringID"
+        android:id="@+id/aboutStringID1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/aboutString"
+        android:text="@string/aboutString1"
         android:layout_marginTop="25dp"
-        android:textSize="20sp"
+        android:textSize="12sp"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:gravity="center"/>
+        app:layout_constraintBottom_toTopOf="@+id/aboutStringID2"/>
+
+    <TextView
+        android:id="@+id/aboutStringID2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/aboutString2"
+        android:textSize="12sp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

@@ -10,8 +10,8 @@
 
     <!--ABOUT ACTIVITY-->
     <string name="aboutNames">Created by: \nRiley Caldwell \nDavid Brunk</string>
-    <string name="aboutString">UNCW building information and images courtesy of the UNCW University Archives.</string>
-
+    <string name="aboutString1">UNCW building information and images courtesy of the</string>
+    <string name="aboutString2"><a href="https://library.uncw.edu/web/collections/archives/landmarks.html">UNCW University Archives</a></string>
 
     <!--CIS BUILDING-->
     <string name="CISBuildingName">Computer Information Systems Building</string>
@@ -55,6 +55,51 @@
         in honor of Dr. Shinn. The University Seal is also located here.</string>
     <string name="ShinnCaption">Shinn Plaza within the woods</string>
     <string name="Shinn_url">For more information, please visit "https://library.uncw.edu/web/collections/archives/bnl/40a.html"</string>
+
+    <!--RANDALL LIBRARY-->
+    <string name="RandallName">Randall Library</string>
+    <string name="RandallInfo">Funding to construct a library at the new campus location began in 1965 by the Friends of
+        Wilmington College. The first on-site library was housed in Alderman Hall administration building following the move
+        from Isaac Bear Building. In 1968, the original front of Randall Library faced College Road but since its 1980s expansion
+        the entrance now faces Chancellors Walk. This facility contains UNCW Archives, Special Collections (Helen Hagan Room),
+        the Gene Huguelet Conference Room, and the Honors Program offices, along with various faculty offices.</string>
+    <string name="RandallCaption">Randall Library</string>
+    <string name="Randall_url">https://library.uncw.edu/web/collections/archives/bnl/3.html</string>
+
+    <!--WAGONER HALL-->
+    <string name="WagName">Wagoner Hall</string>
+    <string name="WagInfo">This structure opened to students in 1989 as the second campus dining hall (Westside was the first.)
+        The Wagoner Dining Hall features food service with special events catering in the Madeline Suite. The General College
+        was housed in Wagoner until its move to Westside following Westside's renovation.</string>
+    <string name="WagCaption">The front of Wagoner Hall</string>
+    <string name="Wag_url">https://library.uncw.edu/web/collections/archives/bnl/39.html</string>
+
+    <!--DOBO HALL-->
+    <string name="DoboName">Dobo Hall</string>
+    <string name="DoboInfo">Opened for use in 1996, the New Science Building contained classrooms, laboratories and faculty
+        offices for the Chemistry and Biology Departments. Known as Dobo Hall since its 1999 dedication to the Dobo brothers,
+        it is currently used by the Department of Biology and Marine Biology and the Department of Chemistry.</string>
+    <string name="DoboCaption">Dobo Hall</string>
+    <string name="Dobo_url">https://library.uncw.edu/web/collections/archives/bnl/25.html</string>
+
+    <!--GALLOWAY RESIDENCE HALL-->
+    <string name="GallowayName">Galloway Residence Hall</string>
+    <string name="GallowayInfo">Originally called \'Dorm \'71,\' Galloway Hall was the first campus residence facility at
+        UNC Wilmington. This building accommodates 400 students and was the first air conditioned dorm in the University of
+        North Carolina system.</string>
+    <string name="GallowayCaption">Galloway</string>
+    <string name="Galloway_url">https://library.uncw.edu/web/collections/archives/bnl/29.html</string>
+
+    <!--LEUTZE HALL-->
+    <string name="LeutzeName">Leutze Hall</string>
+    <string name="LeutzeInfo">Originally called Lakeside Hall due to the building\'s location near the Commons lake,
+        it became known as Leutze Hall in a 2003 dedication ceremony. Currently, the Departments of Communication Studies,
+        Political Science, Foreign Languages and Literatures and Social Work are housed there. The film studies department was
+        housed there until 2007 when it moved to King Hall. UNCW Media has a television studio in this building.</string>
+    <string name="LeutzeCaption">Leutze Over the lake</string>
+    <string name="Leutze_url">https://library.uncw.edu/web/collections/archives/bnl/17.html</string>
+
+
 
 
     <!--IMAGE CONTENT DESCRIPTIONS-->

@@ -77,37 +77,6 @@ public class Building {
 
     // ******************* GETTERS AND SETTERS ********************** //
 
-//    public String getName() {
-//
-//        return this.nameId;
-//    }
-//
-//    public int getImage() {
-//
-//        return this.img_resourceId;
-//    }
-//
-//    public int getCaption() {
-//
-//        return this.captionId;
-//    }
-//
-//    public int getInfo() {
-//
-//        return this.buildingInfoId;
-//    }
-//
-//    public int getURL() {
-//
-//        return this.urlId;
-//    }
-//
-//    public String toString(Building building) {
-//
-//        return building.nameId;
-//    }
-
-
     public long getId() {
         return id;
     }

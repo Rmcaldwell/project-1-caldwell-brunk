@@ -221,29 +221,53 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public void onClickFindNearestBuilding(View view) {
 
+
+        // **********************GET THE LOCATION WHEN BUTTON IS PRESSED**************************
+        // Check permissions at runtime
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE);
+
+        } else {
+
+            // If permission is granted
+            buildLocationRequest();
+            buildLocationCallback();
+
+            // Create FusedProviderClient
+            fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+        }
+
+        // Get location
+        if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(MainActivity.this, new String[] {Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE);
+            return;
+        }
+        fusedLocationProviderClient.requestLocationUpdates(locationRequest, locationCallback, Looper.myLooper());
+        //*******************************************************************************************
+
         int nearestBuildingId = 0;
 
         // Find the nearest building to user
         if (latitude < 34.22500 && latitude > 34.22391 && longitude > -77.86470) { // If nearest building is Shinn
-            nearestBuildingId = 2;
+            nearestBuildingId = 8;
         } else if (latitude > 34.22500 && latitude < 34.22560 && longitude < -77.865721 && longitude > -77.86915) { // Dobo
-            nearestBuildingId = 3;
+            nearestBuildingId = 2;
         } else if  (latitude > 34.22561 && latitude < 34.22600 && longitude < -77.86916 && longitude > -77.86982) { // Cameron
-            nearestBuildingId = 1;
-        } else if (latitude > 34.22601 && latitude < 34.22679 && longitude < -77.87095 && longitude > -77.87175) { // CIS
             nearestBuildingId = 0;
+        } else if (latitude > 34.22601 && latitude < 34.22679 && longitude < -77.87095 && longitude > -77.87175) { // CIS
+            nearestBuildingId = 1;
         } else if (latitude > 34.22736 && latitude < 34.22760 && longitude < -77.86983 && longitude > -77.86999) { // Kresge
             nearestBuildingId = 5;
         } else if (latitude > 34.22761 && latitude < 34.22790 && longitude < -77.87316) { // Randall
-            nearestBuildingId = 4;
+            nearestBuildingId = 7;
         } else if (latitude > 34.22791 && longitude < -77.87000 && longitude > -77.094) { // Friday
-            nearestBuildingId = 6;
+            nearestBuildingId = 3;
         } else if (latitude > 34.22250 && latitude < 34.22390 && longitude < -77.86470 && longitude > -77.86720) { // Wag
             nearestBuildingId = 9;
         } else if (latitude < 34.22249 && longitude < -77.87172 && longitude > -77.87193) { // galloway
-            nearestBuildingId = 7;
+            nearestBuildingId = 4;
         } else if (latitude < 34.22735 && latitude > 34.22680 && longitude < -77.87194 && longitude > -77.87315) { // Leutze
-            nearestBuildingId = 8;
+            nearestBuildingId = 6;
         }
 
 

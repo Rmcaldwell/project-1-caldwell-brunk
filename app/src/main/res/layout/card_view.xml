@@ -10,28 +10,38 @@
     card_view:cardElevation="2dp"
     card_view:cardCornerRadius="4dp">
 
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_gravity="center">
 
 
         <ImageView
             android:id="@+id/info_image"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1.0"
-            android:scaleType="centerCrop" />
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"/>
+        <!--<View-->
+            <!--android:id="@+id/dividerTop"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height=".05dp"-->
+            <!--android:background="@color/light_grey"-->
+            <!--card_view:layout_constraintTop_toBottomOf="@id/info_image" />-->
 
         <TextView
             android:id="@+id/info_text"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginBottom="4dp"
-            android:layout_marginLeft="4dp"/>
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:shadowColor="@color/black"
+            android:shadowRadius="15"
+            android:textSize="25sp"
+            android:gravity="bottom"
+            android:paddingLeft="5dp"
+            android:layout_marginLeft="7dp"/>
 
-    </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.v7.widget.CardView>

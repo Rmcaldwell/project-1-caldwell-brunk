@@ -80,10 +80,10 @@ class CaptionedBuildingsAdapter extends RecyclerView.Adapter<CaptionedBuildingsA
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
         CardView cardView = holder.cardView;
-//        ImageView imageView = (ImageView)cardView.findViewById(R.id.info_image);
-//        Drawable drawable = ContextCompat.getDrawable(cardView.getContext(), imageIds[position]);
-//        imageView.setImageDrawable(drawable);
-//        imageView.setContentDescription(captions.get(position));
+        ImageView imageView = (ImageView)cardView.findViewById(R.id.info_image);
+        Drawable drawable = ContextCompat.getDrawable(cardView.getContext(), imageIds[position]);
+        imageView.setImageDrawable(drawable);
+        imageView.setContentDescription(captions.get(position));
         TextView textView = (TextView)cardView.findViewById(R.id.info_text);
         textView.setText(captions.get(position));
         cardView.setOnClickListener(new View.OnClickListener() {
@@ -95,7 +95,5 @@ class CaptionedBuildingsAdapter extends RecyclerView.Adapter<CaptionedBuildingsA
             }
         });
     }
-
-    // Create list of buildings by reading from the database
 
 }

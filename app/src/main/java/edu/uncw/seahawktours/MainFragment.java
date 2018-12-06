@@ -41,19 +41,10 @@ public class MainFragment extends Fragment {
         }
 
         RecyclerView buildingRecycler = (RecyclerView)inflater.inflate(R.layout.fragment_main, container,false);
-//
-//        String[] building_names = new String[Building.buildingNames.length];
-//        for (int i = 0; i < building_names.length; i++)  {
-//            building_names[i] = Building.buildingNames[i];
-//        }
 
-//        int[] buildingImages = new int[Building.buildingNames.length];
-//        for (int i = 0; i < buildingImages.length; i++) {
-//            buildingImages[i] = Building.buildingNames[i]
-//        }
-
-        // Create arrays of
-        int[] images = { R.drawable.cameron, R.drawable.friday, R.drawable.shinn, R.drawable.cis};
+        // Create array of imageIds
+        int[] images = { R.drawable.cameron, R.drawable.cis, R.drawable.dobo, R.drawable.friday, R.drawable.galloway,
+        R.drawable.kresge, R.drawable.leutze, R.drawable.randall, R.drawable.shinn, R.drawable.wag};
 
         // Create recyclerView
         CaptionedBuildingsAdapter adapter = new CaptionedBuildingsAdapter(buildingNames, images);
@@ -70,25 +61,6 @@ public class MainFragment extends Fragment {
             }
         });
         return buildingRecycler;
-    }
-
-    public void onClickFindBuilding(View view)
-    {
-        // ***************** Old code with spinner **********************
-//        //Get a reference to the Spinner
-////        Spinner buildingName = (Spinner) findViewById(R.id.buildingsSpinner);
-//
-//        //Get selection from spinner
-//        String spinnerText = buildingName.getSelectedItem().toString();
-//
-//        //Create an intent for DetailActivity
-//        Intent intent = new Intent(MainActivity.getAppContext(), DetailActivity.class);
-//
-//        //Send text from spinner to intent object.
-//        intent.putExtra(DetailActivity.EXTRA_MESSAGE, spinnerText);
-//
-//        //Start DetailActivity with the intent
-//        startActivity(intent);
     }
 
 }

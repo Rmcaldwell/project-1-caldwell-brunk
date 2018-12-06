@@ -39,7 +39,7 @@ public class App extends Application {
             initialBuildings.add(new Building("Friday Hall", R.string.Friday_url, R.drawable.friday, R.string.FridayCaption, R.string.FridayHallInfo));
             initialBuildings.add(new Building("Galloway Residence Hall", R.string.Galloway_url, R.drawable.galloway, R.string.GallowayCaption, R.string.GallowayInfo));
             initialBuildings.add(new Building("Leutze Hall", R.string.Leutze_url, R.drawable.leutze, R.string.LeutzeCaption, R.string.LeutzeInfo));
-            initialBuildings.add(new Building("Friday Hall", R.string.Wag_url, R.drawable.wag, R.string.WagCaption, R.string.WagInfo));
+            initialBuildings.add(new Building("Wagoner Hall", R.string.Wag_url, R.drawable.wag, R.string.WagCaption, R.string.WagInfo));
 
 
             // ObjectBox is smart enough to handle CRUD on Collections of entities

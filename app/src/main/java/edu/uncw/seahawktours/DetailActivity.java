@@ -86,8 +86,8 @@ public class DetailActivity extends AppCompatActivity {
             buildingInfoView.setText(R.string.ShinnInfo);
             captionView.setText(R.string.ShinnCaption);
             URLView.setText(R.string.Shinn_url);
-
-        } else if (buildingName.equals("Wagoner Hall")) {
+        }
+        else if (buildingName.equals("Wagoner Hall")) {
             buildingNameView.setText(R.string.WagName);
             buildingImageView.setImageResource(R.drawable.wag);
             buildingInfoView.setText(R.string.WagInfo);
@@ -121,7 +121,9 @@ public class DetailActivity extends AppCompatActivity {
             buildingInfoView.setText(R.string.DoboInfo);
             captionView.setText(R.string.DoboCaption);
             URLView.setText(R.string.Dobo_url);
-        }
+    }
+
+
 
     }
 

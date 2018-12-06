@@ -219,6 +219,38 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
+    public void onClickFindNearestBuilding(View view) {
+
+        int nearestBuildingId = 0;
+
+        // Find the nearest building to user
+        if (latitude < 34.22500 && latitude > 34.22391 && longitude > -77.86470) { // If nearest building is Shinn
+            nearestBuildingId = 2;
+        } else if (latitude > 34.22500 && latitude < 34.22560 && longitude < -77.865721 && longitude > -77.86915) { // Dobo
+            nearestBuildingId = 3;
+        } else if  (latitude > 34.22561 && latitude < 34.22600 && longitude < -77.86916 && longitude > -77.86982) { // Cameron
+            nearestBuildingId = 1;
+        } else if (latitude > 34.22601 && latitude < 34.22679 && longitude < -77.87095 && longitude > -77.87175) { // CIS
+            nearestBuildingId = 0;
+        } else if (latitude > 34.22736 && latitude < 34.22760 && longitude < -77.86983 && longitude > -77.86999) { // Kresge
+            nearestBuildingId = 5;
+        } else if (latitude > 34.22761 && latitude < 34.22790 && longitude < -77.87316) { // Randall
+            nearestBuildingId = 4;
+        } else if (latitude > 34.22791 && longitude < -77.87000 && longitude > -77.094) { // Friday
+            nearestBuildingId = 6;
+        } else if (latitude > 34.22250 && latitude < 34.22390 && longitude < -77.86470 && longitude > -77.86720) { // Wag
+            nearestBuildingId = 9;
+        } else if (latitude < 34.22249 && longitude < -77.87172 && longitude > -77.87193) { // galloway
+            nearestBuildingId = 7;
+        } else if (latitude < 34.22735 && latitude > 34.22680 && longitude < -77.87194 && longitude > -77.87315) { // Leutze
+            nearestBuildingId = 8;
+        }
 
 
+
+        Intent intent = new Intent(this, DetailActivity.class);
+        intent.putExtra(DetailActivity.EXTRA_MESSAGE, nearestBuildingId);
+        startActivity(intent);
+
+    }
 }

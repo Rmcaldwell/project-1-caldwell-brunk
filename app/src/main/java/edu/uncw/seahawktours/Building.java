@@ -34,6 +34,28 @@ public class Building {
 
     public Building() {}
 
+    //Array of building latitudes
+    public static final double[] buildingLat = {
+            34.22634, // CIS
+            34.22577, // Cameron
+            34.22454, // Shinn
+            34.22542, // Dobo
+            34.22782, // Randall
+            34.22738, // Kresge
+            34.22805, // Friday
+    };
+
+    // Array of building longitudes
+    public static final double[] buildingLon = {
+            -77.87164, // CIS
+            -77.86977, // Cameron
+            -77.86422, // Shinn
+            -77.86851, // Dobo
+            -77.87422, // Randall
+            -77.86986, // Kresge
+            -77.8705,  // Friday
+    };
+
     // Array of buildings
 //    public static final Building[] buildings = {
 //            new Building("Cameron Hall", R.string.Cameron_url, R.drawable.cameron, R.string.CameronCaption, R.string.CameronHallInfo),

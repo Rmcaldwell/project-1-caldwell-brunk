@@ -6,6 +6,18 @@
     android:background="?attr/colorPrimary"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" >
 
+    <TextView
+        android:id="@+id/toolbarText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="@string/mainTitle"
+        android:padding="8dp"
+        android:textColor="@color/white"
+        android:gravity="center"/>
+
     <android.support.v7.widget.ActionMenuView
     android:id="@+id/amvMenu"
     android:layout_width="match_parent"
